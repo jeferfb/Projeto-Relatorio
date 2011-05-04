@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:s="library://ns.adobe.com/flex/spark" xmlns:fx="http://ns.adobe.com/mxml/2009">
+	<fx:Metadata>[HostComponent("spark.components.Button")]</fx:Metadata>
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+	</s:states>
+	<s:Path data="M 4.123 3.816 C 4.263 3.99 4.133 4.269 3.83 4.439 L 3.83 4.439 C 3.527 4.609 3.168 4.606 3.027 4.431 L 0.056 0.748 C -0.084 0.574 0.047 0.295 0.349 0.125 L 0.349 0.125 C 0.652 -0.044 1.01 -0.041 1.152 0.133 L 4.123 3.816 Z" height.over="5.021" id="path1" width.over="5.015" winding="nonZero" x="5.544" x.over="6.653" y="5.144" y.over="5.659">
+		<s:fill>
+			<s:SolidColor color="#727176"/>
+		</s:fill>
+	</s:Path>
+	<s:Ellipse height="7" height.over="8" id="ellipse2" width="9" width.over="11" x="0" y="0">
+		<s:fill>
+			<s:SolidColor color="#727176"/>
+		</s:fill>
+	</s:Ellipse>
+	<s:Ellipse height="5" height.over="6" id="ellipse1" width="7" width.over="9" x="1" y="1">
+		<s:fill>
+			<s:SolidColor color="#D8D9DD"/>
+		</s:fill>
+	</s:Ellipse>
+	<s:transitions>
+		<s:Transition autoReverse="true" fromState="over" toState="up">
+			<s:Parallel>
+				<s:Parallel target="{path1}">
+					<s:Move autoCenterTransform="true" duration="500" startDelay="0"/>
+					<s:Resize duration="500" startDelay="0"/>
+				</s:Parallel>
+				<s:Parallel target="{ellipse2}">
+					<s:Resize duration="500" startDelay="0"/>
+				</s:Parallel>
+				<s:Parallel target="{ellipse1}">
+					<s:Resize duration="500" startDelay="0"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+		<s:Transition fromState="up" toState="over" autoReverse="true">
+			<s:Parallel>
+				<s:Parallel target="{path1}">
+					<s:Move duration="500" autoCenterTransform="true" startDelay="0"/>
+					<s:Resize duration="500" startDelay="0"/>
+				</s:Parallel>
+				<s:Parallel target="{ellipse2}">
+					<s:Resize duration="500" startDelay="0"/>
+				</s:Parallel>
+				<s:Parallel target="{ellipse1}">
+					<s:Resize duration="500" startDelay="0"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+	</s:transitions>
+</s:Skin>

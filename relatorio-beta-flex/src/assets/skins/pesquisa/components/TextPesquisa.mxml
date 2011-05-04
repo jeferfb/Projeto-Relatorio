@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:s="library://ns.adobe.com/flex/spark" xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:d="http://ns.adobe.com/fxg/2008/dt">
+	<fx:Metadata>[HostComponent("spark.components.TextInput")]</fx:Metadata>
+	<s:states>
+		<s:State name="normal"/>
+		<s:State name="disabled"/>
+	</s:states>
+	<s:Rect height="17" id="rect1" d:id="3" radiusX="5.99958" radiusY="5.99958" width="128" x="0.5" y="0.5">
+		<s:fill>
+			<s:SolidColor color="#D8D9DD" color.normal="#CCCCCC"/>
+		</s:fill>
+		<s:stroke>
+			<s:SolidColorStroke caps="none" color="#211915" joints="miter" miterLimit="10" weight="1"/>
+		</s:stroke>
+		<s:filters>
+			<s:GlowFilter alpha="0.75" blurX="15" blurY="15" color="#727272" inner="true" quality="2" strength="2"/>
+		</s:filters>
+	</s:Rect>
+	<s:Button skinClass="assets.skins.pesquisa.components.Button1" x="114" y="4"/>
+	<s:RichEditableText heightInLines="1" id="textDisplay" lineThrough.normal="false" textDecoration.normal="none" width="110" x="3" y="3" color.normal="#000000" color.disabled="#FFFFFF" tabStops="S0 S50 S100" fontWeight.normal="bold" fontFamily="Arial"/>
+</s:Skin>
