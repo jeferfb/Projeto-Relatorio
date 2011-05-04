@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:d="http://ns.adobe.com/fxg/2008/dt"
+		xmlns:flm="http://ns.adobe.com/flame/2008"
+		xmlns:ai="http://ns.adobe.com/ai/2009"
+		xmlns:fc="http://ns.adobe.com/flashcatalyst/2009">
+	<fx:Metadata>[HostComponent("spark.components.Button")]</fx:Metadata>
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+	</s:states>
+	<s:Group blendMode="normal"
+			 d:id="7"
+			 flm:knockout="false"
+			 x="0"
+			 y="0"
+			 includeIn="disabled,down,up"
+			 id="group2"
+			 alpha.disabled="0.3">
+		<s:BitmapImage alpha="0.75"
+					   blendMode="multiply"
+					   ai:embed="1"
+					   height="33"
+					   smooth="true"
+					   source="@Embed('assets/skins/entrar/assets/images/Botao-login-teste/Image_0003.png')"
+					   width="92"
+					   x="0"
+					   y="0"/>
+		<s:Rect height="21"
+				radiusX="5.99958"
+				radiusY="5.99958"
+				width="80"
+				x="5"
+				y="5">
+			<s:fill>
+				<s:SolidColor color="#D8D9DD"/>
+			</s:fill>
+		</s:Rect>
+	</s:Group>
+	<s:RichText ai:aa="2"
+				color="#211915"
+				columnCount="1"
+				fontFamily="Myriad Pro"
+				fontWeight="bold"
+				d:id="8"
+				kerning="on"
+				tabStops="S36"
+				text="Entrar"
+				d:userLabel="Entrar"
+				flm:variant="3"
+				whiteSpaceCollapse="preserve"
+				x="29"
+				y="11"
+				includeIn="disabled,down,up"
+				id="richtext2"
+				alpha.disabled="0.3"
+				tabStops.disabled="S0"/>
+	<s:Group blendMode="normal"
+			 d:id="3"
+			 includeIn="over"
+			 flm:knockout="false"
+			 x="0"
+			 y="0"
+			 id="group1">
+		<s:BitmapImage alpha="0.75"
+					   blendMode="multiply"
+					   ai:embed="1"
+					   height="33"
+					   smooth="true"
+					   source="@Embed('assets/skins/entrar/assets/images/Botao-login-teste/Image_0001.png')"
+					   width="92"
+					   x="0"
+					   y="0"/>
+		<s:Rect height="21"
+				radiusX="5.99958"
+				radiusY="5.99958"
+				width="80"
+				x="5"
+				y="5">
+			<s:fill>
+				<s:LinearGradient rotation="90"
+								  scaleX="21"
+								  x="40"
+								  y="0">
+					<s:GradientEntry color="#336535"
+									 ratio="0"/>
+					<s:GradientEntry color="#70A83B"
+									 ratio="1"/>
+				</s:LinearGradient>
+			</s:fill>
+		</s:Rect>
+	</s:Group>
+	<s:RichText ai:aa="2"
+				color="#FFFFFF"
+				columnCount="1"
+				fontFamily="Myriad Pro"
+				fontWeight="bold"
+				d:id="5"
+				includeIn="over"
+				kerning="on"
+				tabStops="S36"
+				text="Entrar"
+				d:userLabel="Entrar"
+				flm:variant="1"
+				whiteSpaceCollapse="preserve"
+				x="29"
+				y="11"
+				id="richtext1"/>
+	<s:transitions>
+		<s:Transition fromState="over"
+					  toState="up"
+					  autoReverse="true">
+			<s:Parallel>
+				<s:Parallel target="{group2}">
+					<s:Fade duration="500"
+							startDelay="0"/>
+				</s:Parallel>
+				<s:Parallel target="{richtext2}">
+					<s:Fade duration="500"
+							startDelay="0"/>
+				</s:Parallel>
+				<s:Parallel target="{group1}">
+					<s:Fade duration="500"
+							startDelay="0"/>
+				</s:Parallel>
+				<s:Parallel target="{richtext1}">
+					<s:Fade duration="500"
+							startDelay="0"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+		<s:Transition fromState="up"
+					  toState="over"
+					  autoReverse="true">
+			<s:Parallel>
+				<s:Parallel target="{group2}">
+					<s:Fade duration="500"
+							startDelay="0"/>
+				</s:Parallel>
+				<s:Parallel target="{richtext2}">
+					<s:Fade duration="500"
+							startDelay="0"/>
+				</s:Parallel>
+				<s:Parallel target="{group1}">
+					<s:Fade duration="500"
+							startDelay="0"/>
+				</s:Parallel>
+				<s:Parallel target="{richtext1}">
+					<s:Fade duration="500"
+							startDelay="0"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+	</s:transitions>
+	<fx:Private>
+		<fc:Guide x="5"/>
+		<fc:Guide y="4"/>
+		<fc:Guide y="5"/>
+	</fx:Private>
+</s:Skin>

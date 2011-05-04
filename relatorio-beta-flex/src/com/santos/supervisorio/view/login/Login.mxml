@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+				   xmlns:s="library://ns.adobe.com/flex/spark"
+				   xmlns:mx="library://ns.adobe.com/flex/mx"
+				   width="310"
+				   height="166"
+				   cornerRadius="8">
+
+	<fx:Script>
+		<![CDATA[
+			private function lpcampos():void
+			{
+				txUsuario.text='';
+				txSenha.text='';
+			}
+			
+			private function teste():void
+			{
+				ExternalInterface.call("abreAdmin", null)
+			}
+		]]>
+	</fx:Script>
+
+	<s:Rect width="100%"
+			height="30"
+			topRightRadiusX="8"
+			topLeftRadiusX="8">
+		<s:fill>
+			<s:LinearGradient rotation="90">
+				<s:entries>
+					<s:GradientEntry color="#c92121"
+									 ratio="0"/>
+					<s:GradientEntry color="#9b1818"
+									 ratio="0.45"/>
+				</s:entries>
+			</s:LinearGradient>
+		</s:fill>
+		<s:filters>
+			<s:DropShadowFilter color="#9b1818"
+								blurX="1"
+								blurY="10"
+								distance="2"
+								angle="90"/>
+		</s:filters>
+	</s:Rect>
+	<s:Label text="Acesso ao Sistema"
+			 fontFamily="Verdana"
+			 fontStyle="normal"
+			 fontWeight="bold"
+			 top="10"
+			 horizontalCenter="0"
+			 color="#FFFFFF"/>
+	<s:Group width="100%"
+			 height="110"
+			 verticalCenter="0">
+		<s:VGroup width="100%"
+				  height="100%">
+			<mx:Form width="100%"
+					 height="100%">
+				<mx:FormItem width="100%"
+							 label="Usuário:"
+							 required="true">
+					<s:TextInput id="txUsuario"
+								 width="100%"
+								 focusColor="#ea2c2c"
+								 skinClass="assets.skins.TextImput"
+								 height="19"/>
+				</mx:FormItem>
+				<mx:FormItem width="100%"
+							 label="Senha:"
+							 required="true">
+					<s:TextInput id="txSenha"
+								 width="100%"
+								 focusColor="#EA2C2C"
+								 displayAsPassword="true"
+								 skinClass="assets.skins.TextImput"
+								 height="19"/>
+				</mx:FormItem>
+			</mx:Form>
+		</s:VGroup>
+	</s:Group>
+	<mx:Text color="#c00000"
+			 width="100%"
+			 fontWeight="bold"
+			 textAlign="center"
+			 bottom="45"/>
+	<mx:ControlBar width="100%"
+				   cornerRadius="8"
+				   height="50"
+				   bottom="0">
+		<s:Group width="100%"
+				 height="100%">
+			<s:layout>
+				<s:BasicLayout/>
+			</s:layout>
+			<s:Button id="btLogin"
+					  label="Entrar"
+					  right="7"
+					  skinClass="assets.skins.entrar.components.EntrarButton3"
+					  width="80"
+					  height="21" click="teste()"/>
+			<s:Button id="btLimpar"
+					  label="Limpar"
+					  left="0"
+					  skinClass="assets.skins.limpar.components.LimparButton"
+					  width="80"
+					  height="21"
+					  click="lpcampos()"/>
+		</s:Group>
+	</mx:ControlBar>
+
+</s:BorderContainer>

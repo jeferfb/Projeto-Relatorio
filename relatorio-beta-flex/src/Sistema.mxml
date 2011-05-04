@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:flexiframe="http://code.google.com/p/flex-iframe/"
+			   backgroundColor="#cccccc"
+			   xmlns:components="components.*"
+			   xmlns:components3="assets.skins.menuTeste.components.*" xmlns:usuario="com.santos.supervisorio.view.usuario.*">
+
+	<fx:Style source="assets/css/global.css"/>
+	
+	<fx:Script>
+		<![CDATA[
+	//		import components.Usuario;
+
+			import mx.controls.Alert;
+			import mx.managers.PopUpManager;
+
+			private function logout(e:MouseEvent):void
+			{
+				ExternalInterface.call('SAIR', null);
+			}
+		]]>
+	</fx:Script>
+
+	<mx:ViewStack id="vs"
+				  left="102"
+				  right="0"
+				  top="0"
+				  bottom="0">
+		<mx:Canvas id="home"
+				   width="100%"
+				   height="100%">
+		</mx:Canvas>
+		<mx:Canvas id="supervisorio"
+				   width="100%"
+				   height="100%">
+			<flexiframe:IFrame id="sps"
+							   source="http://192.168.1.195:8080/webvisu.htm"
+							   right="0"
+							   left="0"
+							   bottom="0"
+							   top="0"/>
+		</mx:Canvas>
+		<mx:Canvas id="relatorio"
+				   width="100%"
+				   height="100%">
+		<!--	<components:Relatorio/> -->
+		</mx:Canvas>
+		<mx:Canvas id="usuario"
+				   width="100%"
+				   height="100%">
+			<usuario:Usuario verticalCenter="0" horizontalCenter="0"/>
+			
+		</mx:Canvas>
+	</mx:ViewStack>
+	<!--	<components3:Menu>
+
+	</components3:Menu>
+	<components3:Supervisorio>
+		<components3:click>
+			<![CDATA[
+				Alert.show('Execurando um teste!');
+			]]>
+		</components3:click>
+	</components3:Supervisorio>  -->
+	<s:Button y="254"
+			  label="supervisorio"
+			  left="5">
+		<s:click>
+			<![CDATA[
+				vs.selectedChild=supervisorio;
+			]]>
+		</s:click>
+	</s:Button>
+	<s:Button y="283"
+			  label="relatorio"
+			  left="14.5">
+		<s:click>
+			<![CDATA[
+				vs.selectedChild=relatorio;
+			]]>
+		</s:click>
+	</s:Button>
+	<s:Button y="312"
+			  label="usuario"
+			  left="14.5">
+		<s:click>
+			<![CDATA[
+				vs.selectedChild=usuario;
+			]]>
+		</s:click>
+	</s:Button>
+	<s:Button y="341"
+			  label="SAIR"
+			  left="14.5">
+		<s:click>
+			<![CDATA[
+				ExternalInterface.call('SAIR', null);
+				Alert.show('Saindo...');
+			]]>
+		</s:click>
+	</s:Button>
+
+</s:Application>
